@@ -1,0 +1,27 @@
+# macOS 系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Python 缓存与虚拟环境
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+ENV/
+
+# IDE 与编辑器配置
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 常见构建与日志
+build/
+dist/
+*.egg-info/
+*.log

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LLM_monogatari"
+version = "0.1.0"
+description = "从可手算的语言模型原理，到一台 Mac 上的日文故事微调实验"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "LLM_monogatari contributors"}]
+dependencies = []
+
+[project.optional-dependencies]
+train = ["mlx-lm[train]==0.31.3"]
+
+[project.scripts]
+llm-monogatari-web = "llm_monogatari.web:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,17 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# 下载的模型、训练产物和运行日志不进 Git
+.cache/
+adapters/
+models/
+runs/
+*.safetensors
+
+# 由脚本生成的数据可以随时重建
+data/processed/*.jsonl
+!data/processed/.gitkeep

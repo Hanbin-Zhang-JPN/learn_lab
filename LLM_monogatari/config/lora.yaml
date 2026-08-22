@@ -1,0 +1,32 @@
+# 这份配置优先保证 M3 / 16GB 能稳定完成，而不是追求最大模型。
+model: "mlx-community/Qwen3-0.6B-4bit"
+train: true
+fine_tune_type: lora
+data: "data/processed"
+seed: 42
+
+# 只调整最后 8 层；batch 1 与短序列可以压低统一内存占用。
+num_layers: 8
+batch_size: 1
+iters: 300
+max_seq_length: 384
+grad_checkpoint: true
+
+# 小数据用保守学习率。valid loss 上升时应提前停，不要无脑加轮次。
+learning_rate: 1e-5
+val_batches: -1
+steps_per_report: 10
+steps_per_eval: 50
+save_every: 100
+
+# chat 数据只对 assistant 故事部分计算损失。
+mask_prompt: true
+adapter_path: "adapters/LLM_monogatari-lora"
+resume_adapter_file: null
+test: false
+
+lora_parameters:
+  keys: ["self_attn.q_proj", "self_attn.v_proj"]
+  rank: 8
+  scale: 16.0
+  dropout: 0.0

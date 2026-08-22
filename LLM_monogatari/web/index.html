@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="名前と場所から、小さな物語を一つ。">
+    <title>LLM_monogatari</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="kicker">名前と場所から、短い物語を</p>
+        <h1>LLM_<wbr>monogatari</h1>
+        <p class="intro">名前と場所を置いてください。続きは、この小さな機械が考えます。</p>
+      </header>
+
+      <form id="story-form">
+        <label for="name">人物の名前</label>
+        <input id="name" name="name" maxlength="20" placeholder="例：葵" autocomplete="off" required>
+
+        <label for="place">場所</label>
+        <input id="place" name="place" maxlength="20" placeholder="例：鎌倉" autocomplete="off" required>
+
+        <button id="submit" type="submit">一篇をひらく</button>
+        <p class="hint">漢字・ひらがな・カタカナで入力してください。</p>
+      </form>
+
+      <section id="result" aria-live="polite" hidden>
+        <p id="mode" class="mode"></p>
+        <p id="story" class="story"></p>
+        <button id="copy" class="quiet" type="button">物語をコピー</button>
+      </section>
+
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <footer>
+        <span>この物語には誤りや不自然な表現が含まれることがあります。</span>
+        <span>あなたの入力は、このページを動かしている Mac へ送られます。</span>
+      </footer>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
