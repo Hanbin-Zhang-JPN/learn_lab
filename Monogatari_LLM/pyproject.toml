@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "monogatari-llm"
+version = "0.1.0"
+description = "A small, readable Japanese story Transformer for learning on Apple Silicon."
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "numpy>=1.26,<3",
+  "torch>=2.4,<3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,165 @@
+:root {
+  --paper: #f7f5ef;
+  --ink: #1d1d1b;
+  --muted: #77736b;
+  --line: #aaa59b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.page-shell {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 24px;
+}
+
+.composer {
+  width: min(100%, 640px);
+}
+
+.brand {
+  margin: 0 0 46px;
+  color: var(--muted);
+  font: 500 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .08em;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(40px, 7vw, 64px);
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: -.035em;
+}
+
+.intro {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+form {
+  margin-top: 56px;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+label span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+input,
+select {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  padding: 10px 0 12px;
+  color: var(--ink);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 21px;
+}
+
+input::placeholder {
+  color: #b5b0a6;
+}
+
+select:has(option[value='']:checked) {
+  color: #b5b0a6;
+}
+
+select option {
+  color: var(--ink);
+}
+
+input:focus,
+select:focus {
+  border-color: var(--ink);
+}
+
+button {
+  width: 100%;
+  margin-top: 34px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: .04em;
+}
+
+button:hover:not(:disabled),
+button:focus-visible {
+  background: transparent;
+  color: var(--ink);
+}
+
+button:disabled {
+  cursor: default;
+  opacity: .35;
+}
+
+.story {
+  margin-top: 58px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.story p {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(20px, 3.5vw, 25px);
+  line-height: 1.95;
+  letter-spacing: .01em;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    align-items: flex-start;
+    padding: 44px 24px 64px;
+  }
+
+  .brand {
+    margin-bottom: 54px;
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  form {
+    margin-top: 48px;
+  }
+}

@@ -1,0 +1,17 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.next/
+.vinext/
+dist/
+.wrangler/
+node_modules/
+*.egg-info/
+data/*.jsonl
+artifacts/*.pt
+artifacts/*.json
+public/model.bin
+public/model-config.json
+npm-debug.log*
