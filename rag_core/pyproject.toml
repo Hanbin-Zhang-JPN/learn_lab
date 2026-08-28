@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-core"
+version = "1.0.0"
+description = "標準ライブラリ中心で原理を追える実用日本語 RAG"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+ragcore = "ragcore.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ragcore*"]
